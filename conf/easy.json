@@ -1,0 +1,92 @@
+{
+  "spritesheet": "./img/item.png",
+  "items": {
+    "pt_biscuit_bleu": {
+      "x"      : 60,
+      "y"      : 50,
+      "w"      : 140,
+      "h"      : 245,
+      "centre" : {
+        "x" : 70,
+        "y" : 26
+      }
+    },
+    "pt_biscuit_jaune": {
+      "x": 358,
+      "y": 50,
+      "w": 140,
+      "h": 245,
+      "centre" : {
+        "x": 70,
+        "y": 26
+      }
+    },
+    "chaussette": {
+      "x": 659,
+      "y": 90,
+      "w": 139,
+      "h": 208,
+      "centre" : {
+        "x" : 78,
+        "y" : 26
+      }
+    },
+    "couronne": {
+      "x": 957,
+      "y": 84,
+      "w": 213,
+      "h": 213,
+      "centre" : {
+        "x" : 105,
+        "y" : 62
+      }
+    }
+  },
+  "entity": {
+    "biscuit1": {
+      "item": "pt_biscuit_bleu",
+      "size": 0.3,
+      "blur": 5
+    },
+    "biscuit2": {
+      "item": "pt_biscuit_jaune",
+      "size": 0.3,
+      "blur": 5
+    },
+    "biscuit3": {
+      "item": "pt_biscuit_jaune",
+      "size": 0.5,
+      "blur": 0
+    },
+    "biscuit4": {
+      "item": "pt_biscuit_jaune",
+      "size": 0.3,
+      "blur": 5
+    },
+    "chaussette1": {
+      "item": "chaussette",
+      "size": 0.5,
+      "blur": 0
+    }
+  },
+  "animations": {
+
+    "anim1": {
+      "entity" : "biscuit1",
+      "deg"    : 25,
+      "freq"   : 120
+    },
+
+    "anim1": {
+      "entity": "biscuit1",
+      "deg": 25,
+      "freq": 120
+    },
+
+    "anim2": {
+      "entity" : "biscuit1",
+      "deg"    : 25,
+      "freq"   : 100
+    }
+  }
+}
