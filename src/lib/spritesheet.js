@@ -1,4 +1,4 @@
-import { createAnim } from './anim.js';
+import { createAnim, createAnimLoop } from './anim.js';
 
 export default class SpriteSheet{
 
@@ -6,6 +6,7 @@ export default class SpriteSheet{
         this.image      = image;
         this.tiles      = new Map();
         this.animations = new Map();
+        this.explodes   = new Map();
     }
 
     //
@@ -50,7 +51,7 @@ export default class SpriteSheet{
       for (let i = degCurrent; i < deg; i += step ){
         animSet.push( func( i));
       }
-      let anim = createAnim( animSet);
+      let anim = createAnimLoop( animSet);
       this.animations.set( name, { anim, size });
     }
   
@@ -95,7 +96,6 @@ export default class SpriteSheet{
 
       context.drawImage( this.image, x, y, w, h, 0, 0, Math.ceil(w * size), Math.ceil(h * size));
       
-      
       if( size != .3){
 
         let color   = (size <= .2) ? 'rgba( 255, 255, 255, .4)' : 'rgba( 0, 0, 0, .3)';
@@ -107,10 +107,97 @@ export default class SpriteSheet{
       }
       
       this.tiles.set( name, { buffer, centre, size});
-
+      this.defineExplode( name);
       return this;
 
     }
+
+    _overlayStart( sprite, numImg, maxSize){
+
+      let buffer = sprite.buffer,
+          w      = buffer.width,
+          step   = (maxSize / numImg),
+          h      = buffer.height;
+
+      return ( num, listPoint) => {
+
+        const overlay  = document.createElement('canvas');
+        const start    = document.createElement('canvas');
+        
+        overlay.width  = start.width  = w;
+        overlay.height = start.height = h;
+
+        const startCtx   = start.getContext('2d');
+        const overlayCtx = overlay.getContext('2d');
+        
+
+        startCtx.fillStyle = `#FFF`;
+
+        listPoint.map((obj)=>{
+
+          startCtx.beginPath();
+          startCtx.arc(
+            obj.x,
+            obj.y,
+            Math.round( step * num),
+            0,
+            2 * Math.PI,
+            false
+          );
+
+          startCtx.fill();
+          startCtx.closePath();
+        
+        });
+
+        overlayCtx.drawImage( buffer, 0, 0);
+        overlayCtx.globalCompositeOperation = "source-in";
+        overlayCtx.drawImage( start, 0, 0);
+        overlayCtx.drawImage( buffer, 0, 0);
+
+        return overlay;
+      }
+    }
+
+    //
+    defineExplode(  name) {
+
+      
+      let numImge      = 100;
+      let tailleMax    = 15;
+      
+      let sprite       = this.tiles.get( name);
+
+      let particuleLen = 30 + Math.round( 150 * sprite.size);
+
+      let listPoint    = new Array( particuleLen);
+      let func         = this._overlayStart( sprite, numImge, tailleMax );
+      let animSet      = [];
+
+      for( let i = 0 ; i < particuleLen ; i++){
+
+        listPoint[i] = {
+          x    : Math.round( Math.random() * sprite.buffer.width),
+          y    : Math.round( Math.random() * sprite.buffer.height),
+          size : 0
+        };
+
+      }
+
+      for (let i = 0; i < numImge; i++) {
+        let frame = func( i, listPoint);
+
+        if( frame){
+          animSet.push(frame);
+        }
+
+      }
+
+      let anim = createAnim(animSet);
+      this.explodes.set( name, { anim });
+    }
+
+
 
     draw( name, context, x, y){
       const obj = this.tiles.get( name);

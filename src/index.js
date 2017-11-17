@@ -10,8 +10,8 @@ async function init(){
       level     = await loadLevel( 'easy'),
       timer     = new Timer( 1 / 60);
 
-  timer.draw   = () => {
-    level.render.draw( context);
+  timer.draw   = ( cumulateTime) => {
+    level.render.draw( context, cumulateTime);
   };
 
   timer.update = ( freq) => {

@@ -18,7 +18,9 @@ export default class Fall extends Trait{
     update( entity , deltaTime){
 
       if( entity.pos.y >= this.bottom){
-        entity.pos.y = this.start;
+        entity.animeEnd = false;
+        entity.died     = false;
+        entity.pos.y    = this.start;
       }else{
         entity.pos.y += this.vit;
       }

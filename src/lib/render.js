@@ -8,10 +8,10 @@ export default (function Render(){
     layers.push( funcDraw);
   }
 
-  function draw( context){
+  function draw( context, deltaTime){
     context.clearRect( 0, 0, 640, 640);
     layers.map(funcDraw =>{
-      funcDraw( context);
+      funcDraw( context, deltaTime);
     });
   }
 

@@ -112,8 +112,8 @@
 
     "couronne_big": {
       "item": "couronne",
-      "size": 0.7,
-      "blur": 5
+      "size": 0.6,
+      "blur": 2
     }
   },
 

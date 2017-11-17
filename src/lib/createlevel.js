@@ -38,7 +38,6 @@ function setupEntity( objectConf, level, sprite){
     });
 
 
-
 }
 
 /**
@@ -59,8 +58,6 @@ export function createLevel( factoryEntity = null){
 
           //setupBackground( objectConf, level, sprite);
           setupEntity( objectConf, level, sprite);
-
-          //sprite.animations.get( "anim1");
 
           return level;
 
