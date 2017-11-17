@@ -3,8 +3,9 @@ import Fall   from '../trait/fall.js';
 import SinMove   from '../trait/sinmove.js';
 
 
-export function factoryEntity( sprite){
+export function factoryEntity( sprite, listAnim){
 
+      let listAnimArray = [...listAnim];
 
       function draw( context){
         let animObj = sprite.animations.get( this.anim );
@@ -12,12 +13,14 @@ export function factoryEntity( sprite){
       }
 
       return function createItem(){
+       
+        let item      = new Entity();
+        let iLen      = listAnimArray.length - 1;
+        let randIndex = Math.round(Math.random() * iLen);
 
-        let item = new Entity();
-
-        item.pos.x = Math.random() * 640;
-        item.pos.y = (Math.random() * -640)- 30;
-        item.anim  = "anim1";
+        item.pos.x    = Math.random() * 640;
+        item.pos.y    = (Math.random() * -640)- 30;
+        item.anim     = listAnimArray[randIndex];
 
         item.addTrait( new Fall( item.pos.y));
         item.addTrait( new SinMove( item.pos.x));

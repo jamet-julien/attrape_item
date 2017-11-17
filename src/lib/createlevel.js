@@ -23,7 +23,7 @@ function setupBackground( objectConf, level, sprite){
  */
 function setupEntity( objectConf, level, sprite){
   
-    let createEntity = factoryEntity( sprite),
+  let createEntity = factoryEntity( sprite, Object.keys( objectConf.animations)),
         entity;
 
     for( let i = 0 ; i < 100; i++){

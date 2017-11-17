@@ -1,5 +1,7 @@
 {
   "spritesheet": "./img/item.png",
+
+
   "items": {
     "pt_biscuit_bleu": {
       "x"      : 60,
@@ -42,49 +44,78 @@
       }
     }
   },
+
+
   "entity": {
-    "biscuit1": {
+
+    "biscuit_bleu_small": {
+      "item": "pt_biscuit_bleu",
+      "size": 0.2,
+      "blur": 5
+    },
+
+    "biscuit_jaune_small": {
+      "item": "pt_biscuit_jaune",
+      "size": 0.2,
+      "blur": 5
+    },
+    "chaussette_small": {
+      "item": "chaussette",
+      "size": 0.2,
+      "blur": 5
+    },
+
+
+    "biscuit_bleu": {
       "item": "pt_biscuit_bleu",
       "size": 0.3,
-      "blur": 5
-    },
-    "biscuit2": {
-      "item": "pt_biscuit_jaune",
-      "size": 0.3,
-      "blur": 5
-    },
-    "biscuit3": {
-      "item": "pt_biscuit_jaune",
-      "size": 0.5,
       "blur": 0
     },
-    "biscuit4": {
+    "biscuit_jaune": {
       "item": "pt_biscuit_jaune",
       "size": 0.3,
-      "blur": 5
+      "blur": 0
     },
-    "chaussette1": {
+    "chaussette": {
+      "item": "chaussette",
+      "size": 0.3,
+      "blur": 0
+    },
+
+
+    "biscuit_bleu_big": {
+      "item": "pt_biscuit_bleu",
+      "size": 0.5,
+      "blur": 2
+    },
+    "biscuit_jaune_big": {
+      "item": "pt_biscuit_jaune",
+      "size": 0.5,
+      "blur": 2
+    },
+    "chaussette_big": {
       "item": "chaussette",
       "size": 0.5,
-      "blur": 0
+      "blur": 2
     }
   },
+
   "animations": {
 
-    "anim1": {
-      "entity" : "biscuit1",
+    "anim_biscuit_bleu_small": {
+      "entity" : "biscuit_bleu_small",
       "deg"    : 25,
       "freq"   : 120
     },
 
-    "anim1": {
-      "entity": "biscuit1",
-      "deg": 25,
+    "anim_biscuit_jaune": {
+      "entity": "biscuit_jaune",
+      "deg" : 25,
       "freq": 120
     },
 
-    "anim2": {
-      "entity" : "biscuit1",
+    "anim_chaussette_big": {
+      "entity" : "chaussette_big",
       "deg"    : 25,
       "freq"   : 100
     }
