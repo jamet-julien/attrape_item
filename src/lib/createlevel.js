@@ -23,15 +23,21 @@ function setupBackground( objectConf, level, sprite){
  */
 function setupEntity( objectConf, level, sprite){
   
-  let createEntity = factoryEntity( sprite, Object.keys( objectConf.animations)),
-        entity;
+  let createEntity = factoryEntity(sprite, objectConf),
+        entity, entities = [];
 
-    for( let i = 0 ; i < 100; i++){
-      entity = createEntity();
+    for( let i = 0 ; i < 20; i++){
+      entities.push( createEntity());
+    }
 
+    entities.sort( (a, b) => {
+        return a.size - b.size;
+    }).map( entity =>{
       level.items.push( entity);
       level.render.push( entity.draw.bind( entity));
-    }
+    });
+
+
 
 }
 

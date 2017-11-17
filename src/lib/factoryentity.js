@@ -3,9 +3,9 @@ import Fall   from '../trait/fall.js';
 import SinMove   from '../trait/sinmove.js';
 
 
-export function factoryEntity( sprite, listAnim){
+export function factoryEntity(sprite, objectConf){
 
-      let listAnimArray = [...listAnim];
+      let listAnimArray = [... Object.keys( objectConf.animations)];
 
       function draw( context){
         let animObj = sprite.animations.get( this.anim );
@@ -20,12 +20,13 @@ export function factoryEntity( sprite, listAnim){
 
         item.pos.x    = Math.random() * 640;
         item.pos.y    = (Math.random() * -640)- 30;
-        item.anim     = listAnimArray[randIndex];
+        item.anim     = listAnimArray[ randIndex];
 
         item.addTrait( new Fall( item.pos.y));
         item.addTrait( new SinMove( item.pos.x));
         
         item.draw = draw;
+        item.size = objectConf.entity[ objectConf.animations[item.anim].entity].size;
 
         return item;
 

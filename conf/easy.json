@@ -29,15 +29,15 @@
       "w": 139,
       "h": 208,
       "centre" : {
-        "x" : 78,
-        "y" : 26
+        "x" : 40,
+        "y" : 40
       }
     },
     "couronne": {
-      "x": 957,
-      "y": 84,
-      "w": 213,
-      "h": 213,
+      "x": 956,
+      "y": 83,
+      "w": 214,
+      "h": 214,
       "centre" : {
         "x" : 105,
         "y" : 62
@@ -64,6 +64,11 @@
       "size": 0.2,
       "blur": 5
     },
+    "couronne_small": {
+      "item": "couronne",
+      "size": 0.2,
+      "blur": 5
+    },
 
 
     "biscuit_bleu": {
@@ -81,22 +86,34 @@
       "size": 0.3,
       "blur": 0
     },
+    "couronne": {
+      "item": "couronne",
+      "size": 0.3,
+      "blur": 0
+    },
 
 
     "biscuit_bleu_big": {
       "item": "pt_biscuit_bleu",
-      "size": 0.5,
+      "size": 0.6,
       "blur": 2
     },
     "biscuit_jaune_big": {
       "item": "pt_biscuit_jaune",
-      "size": 0.5,
+      "size": 0.6,
       "blur": 2
     },
+
     "chaussette_big": {
       "item": "chaussette",
-      "size": 0.5,
+      "size": 0.6,
       "blur": 2
+    },
+
+    "couronne_big": {
+      "item": "couronne",
+      "size": 0.7,
+      "blur": 5
     }
   },
 
@@ -116,8 +133,20 @@
 
     "anim_chaussette_big": {
       "entity" : "chaussette_big",
-      "deg"    : 25,
-      "freq"   : 100
+      "deg"    : 10,
+      "freq"   : 120
+    },
+
+    "anim_couronne": {
+      "entity": "couronne",
+      "deg": 10,
+      "freq": 120
+    },
+
+    "anim_couronne_big": {
+      "entity": "couronne_big",
+      "deg": 10,
+      "freq": 120
     }
   }
 }

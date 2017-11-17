@@ -11,6 +11,7 @@ export default class SpriteSheet{
     //
     _computeMaxLength( { centre, buffer}){
       let maxSize = Math.pow( Math.max( buffer.width - centre.x, centre.x), 2) + Math.pow( Math.max( buffer.height - centre.y, centre.y), 2);
+      
       return Math.ceil( Math.sqrt( maxSize));
     }
 
@@ -52,6 +53,23 @@ export default class SpriteSheet{
       let anim = createAnim( animSet);
       this.animations.set( name, { anim, size });
     }
+  
+  _computeOverlay( { buffer, w, h }, color){
+
+    const overlay    = document.createElement('canvas');
+    const overlayCtx = overlay.getContext('2d');
+
+    overlay.width  = w;
+    overlay.height = h;
+
+    overlayCtx.drawImage( buffer, 0, 0);
+
+    overlayCtx.globalCompositeOperation = "source-in";
+    overlayCtx.fillStyle = color;
+    overlayCtx.fillRect(0, 0, w, h);
+
+    return overlay;
+  }
 
     //
   define( name, x, y, w, h, centre, size = 1, blur = 0){
@@ -61,8 +79,8 @@ export default class SpriteSheet{
       buffer.width  = Math.round( w * size);
       buffer.height = Math.round( h * size);
 
-      centre.x      = Math.round( centre.x * size),
-      centre.y      = Math.round( centre.y * size);
+      centre.x      =  centre.x * size;
+      centre.y      =  centre.y * size;
       
       const context = buffer.getContext('2d');
 
@@ -71,11 +89,22 @@ export default class SpriteSheet{
         context.filter = `blur(${blur}px)`;
         x -= blur;
         y -= blur;
-        w += ( blur * 4);
-        h += ( blur * 4);
+        w += ( blur * 8);
+        h += ( blur * 8);
       }
+
+      context.drawImage( this.image, x, y, w, h, 0, 0, Math.ceil(w * size), Math.ceil(h * size));
       
-      context.drawImage( this.image, x, y, w, h, 0, 0, Math.round(w * size), Math.round(h * size));
+      
+      if( size != .3){
+
+        let color   = (size <= .2) ? 'rgba( 255, 255, 255, .4)' : 'rgba( 0, 0, 0, .3)';
+        let option  = { buffer, w, h };
+        let overlay = this._computeOverlay( option, color)
+        
+        context.drawImage( overlay, 0, 0);
+        
+      }
       
       this.tiles.set( name, { buffer, centre, size});
 
