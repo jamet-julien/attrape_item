@@ -3,10 +3,10 @@ import Vector    from '../lib/vector.js';
 
 export default class Fall extends Trait{
 
-    constructor( start){
+    constructor( start, yMax){
       super('fall');
       this.vit      = Math.ceil( Math.random() * 2);
-      this.bottom   = 640;
+      this.bottom   = yMax;
       this.start    = start;
     }
 

@@ -4,19 +4,16 @@ import Collider from './collider.js';
 
 export default class Level{
 
-  constructor(){
+  constructor({ width, height }){
     this.items  = [];
-    this.render = Render;
+    this.render = Render({ width, height });
     this.mouse  = Mouse();
-
     //this.render.push( this.mouse.draw);
-
     this.collider = new Collider( this.mouse);
   }
 
 
   update( freq){
-
     this.items.map( item => {
       item.update( freq);
       this.collider.check( item);

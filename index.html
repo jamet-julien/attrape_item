@@ -8,15 +8,28 @@
 
   <title>Document</title>
   <style>
+    body, html{
+      width : 100%;
+      height : 100%;
+    }
     body{
       background-color : #000;
       margin  : 0;
       padding : 0;
     }
+
+    #game{
+      
+      width  : 100%;
+      height : 100%;
+      margin : 0px;
+      cursor : pointer;
+      
+    }
   </style>
 </head>
 <body>
-  <canvas id="game" width="640" height="640"></canvas>
+  <canvas id="game"></canvas>
 
   <!--script src="./build/game.js" type="text/javascript" charset="utf-8"></script-->
   <script src="./src/index.js" type="module" charset="utf-8"></script>

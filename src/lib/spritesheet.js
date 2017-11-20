@@ -37,8 +37,87 @@ export default class SpriteSheet{
         return bufferNew;
       }
     }
-    
+
+    _computeMultiply({ width, height}, count) {
+
+    let _width = width,
+       _height = height,
+        _count = count;
+
+      return (listPoint, step) => {
+
+        const bufferNew = document.createElement('canvas');
+
+        bufferNew.width  = _width;
+        bufferNew.height = _height;
+
+        const context = bufferNew.getContext('2d');
+
+   
+        for (let i = 0; i < _count; i++) {
+
+          let { sprite, x, y, speed, life} = listPoint[i];
+
+          if( life < step){
+            y = y - ( speed * step);
+            x = x + ( Math.cos( step ) * speed);
+
+            context.drawImage(
+                              sprite.buffer,
+                              x,
+                              y
+                            );
+          }
+
+        }
+
+        return bufferNew;
+      }
+    }
+
     //
+    defineDecoration(name, { entity, numImage, count, size }) {
+
+      let len        = entity.length,
+          sprites    = new Array( len),
+          listPoint  = new Array( count),
+          topPart    = Math.round( (size.height / 3)*2),
+          bottomPart = size.height - topPart;
+
+      for( let i = 0; i < len ; i++){
+        sprites[i] = this.tiles.get( entity[i]);
+      }
+
+      for (let i = 0; i < count; i++) {
+        let index = Math.round( Math.random() * (len - 1));
+
+        listPoint[i] = {
+          sprite  : sprites[ index ],
+          x       : Math.round( Math.random() * ( size.width  - 41)) + 20,
+          y       : Math.round(Math.random() * bottomPart) + topPart,
+          speed   : Math.round( Math.random() * 2) + 1,
+          life    : Math.round( Math.random() * numImage)
+        };
+
+      }
+
+      let func    = this._computeMultiply( size, count);
+      let animSet = [];
+
+      for (let i = 0; i < numImage; i++) {
+        let frame = func(listPoint, i);
+
+        if (frame) {
+          animSet.push(frame);
+        }
+      }
+
+      let anim = createAnim( animSet.reverse());
+      this.animations.set( name, { anim, size });
+
+    }
+    
+      //
     defineAnimation( name, { entity , deg, freq}){
 
       let sprite     = this.tiles.get( entity);
@@ -97,7 +176,7 @@ export default class SpriteSheet{
 
       context.drawImage( this.image, x, y, w, h, 0, 0, Math.ceil(w * zoom), Math.ceil(h * zoom));
       
-      if( zoom != .3){
+      if( zoom != .3 && !~name.indexOf("etoile") ){
 
         let color   = (zoom <= .2) ? 'rgba( 255, 255, 255, .4)' : 'rgba( 0, 0, 0, .3)';
         let option  = { buffer, w, h };

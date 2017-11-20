@@ -1,15 +1,17 @@
 
 
-export default (function Render(){
+export default function Render({ width, height }){
 
-  let layers = [];
+  let layers = [],
+      _width = width,
+      _height = height;
 
   function push( funcDraw){
     layers.push( funcDraw);
   }
 
   function draw( context, deltaTime){
-    context.clearRect( 0, 0, 640, 640);
+    context.clearRect(0, 0, _width, _height);
     layers.map(funcDraw =>{
       funcDraw( context, deltaTime);
     });
@@ -20,4 +22,4 @@ export default (function Render(){
       draw,
   }
   
-})()
+};

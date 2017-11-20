@@ -21,13 +21,13 @@ function setupBackground( objectConf, level, sprite){
  * @param {*} level 
  * @param {*} sprite 
  */
-function setupEntity( objectConf, level, sprite){
+function setupEntity(objectConf, level, sprite, { width, height }){
   
-  let createEntity = factoryEntity(sprite, objectConf),
+  let createEntity = factoryEntity(sprite, objectConf, { width, height }),
         entity, entities = [];
 
     for( let i = 0 ; i < 20; i++){
-      entities.push( createEntity());
+      entities.push(createEntity({ width, height }));
     }
     
     entities.sort( (a, b) => {
@@ -45,7 +45,7 @@ function setupEntity( objectConf, level, sprite){
  * 
  * @param {*} factoryEntity 
  */
-export function createLevel( factoryEntity = null){
+export function createLevel( {width, height}){
 
     return function loadLevel( mode){
       return loadJson( `./conf/${mode}.json`)
@@ -55,10 +55,10 @@ export function createLevel( factoryEntity = null){
         ]))
         .then(([ objectConf, sprite]) => {
 
-          let level    = new Level();
+          let level = new Level({ width, height });
 
           //setupBackground( objectConf, level, sprite);
-          setupEntity( objectConf, level, sprite);
+          setupEntity(objectConf, level, sprite, { width, height });
 
           return level;
 

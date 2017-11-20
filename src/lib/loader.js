@@ -41,6 +41,11 @@ export function loadSprite( conf, pathSrc) {
       let { x, y, w, h, centre, zoom = 1, blur = 0 } = Object.assign({}, conf.items[entity.item], entity);
       spritesheet.define( name, x, y, w, h, centre, zoom, blur);
     }
+
+    for( let name in conf.decoration){
+      let entity = conf.decoration[name];
+      spritesheet.defineDecoration( name, entity);
+    }
     
     for (let name in conf.animations) {
       let entity = conf.animations[name];
