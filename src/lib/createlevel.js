@@ -29,14 +29,15 @@ function setupEntity( objectConf, level, sprite){
     for( let i = 0 ; i < 20; i++){
       entities.push( createEntity());
     }
-
+    
     entities.sort( (a, b) => {
-        return a.size - b.size;
+      return a.zoom - b.zoom;
     }).map( entity =>{
       level.items.push( entity);
       level.render.push( entity.draw.bind( entity));
     });
 
+    level.items.reverse();
 
 }
 

@@ -1,4 +1,5 @@
 import Vector from './vector.js';
+import HitBox from './hitbox.js';
 
 
 export class Trait{
@@ -28,7 +29,10 @@ export default class Entity{
 
     this.pos      = new Vector( 0, 0);
     this.vel      = new Vector( 0, 0);
-    this.hitBox   = new Vector( 0, 0);
+
+    this.size     = new Vector( 0, 0);
+    this.hitBox   = new HitBox( this.pos, this.size);
+
 
     this.traits   = [];
 

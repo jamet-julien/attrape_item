@@ -73,20 +73,21 @@ export default class SpriteSheet{
   }
 
     //
-  define( name, x, y, w, h, centre, size = 1, blur = 0){
+  define( name, x, y, w, h, centre, zoom = 1, blur = 0){
 
       const buffer  = document.createElement('canvas');
+      let size      = { x: 0, y: 0};
       
-      buffer.width  = Math.round( w * size);
-      buffer.height = Math.round( h * size);
+      buffer.width  = Math.round( w * zoom);
+      buffer.height = Math.round( h * zoom);
 
-      centre.x      =  centre.x * size;
-      centre.y      =  centre.y * size;
+      centre.x      =  centre.x * zoom;
+      centre.y      =  centre.y * zoom;
       
       const context = buffer.getContext('2d');
 
       if( blur){
-        blur = Math.ceil( blur * size);
+        blur = Math.ceil( blur * zoom);
         context.filter = `blur(${blur}px)`;
         x -= blur;
         y -= blur;
@@ -94,11 +95,11 @@ export default class SpriteSheet{
         h += ( blur * 8);
       }
 
-      context.drawImage( this.image, x, y, w, h, 0, 0, Math.ceil(w * size), Math.ceil(h * size));
+      context.drawImage( this.image, x, y, w, h, 0, 0, Math.ceil(w * zoom), Math.ceil(h * zoom));
       
-      if( size != .3){
+      if( zoom != .3){
 
-        let color   = (size <= .2) ? 'rgba( 255, 255, 255, .4)' : 'rgba( 0, 0, 0, .3)';
+        let color   = (zoom <= .2) ? 'rgba( 255, 255, 255, .4)' : 'rgba( 0, 0, 0, .3)';
         let option  = { buffer, w, h };
         let overlay = this._computeOverlay( option, color)
         
@@ -106,7 +107,10 @@ export default class SpriteSheet{
         
       }
       
-      this.tiles.set( name, { buffer, centre, size});
+      size.x = buffer.width;
+      size.y = buffer.height;
+
+      this.tiles.set( name, { buffer, centre, zoom, size});
       this.defineExplode( name);
       return this;
 
@@ -163,12 +167,12 @@ export default class SpriteSheet{
     defineExplode(  name) {
 
       
-      let numImge      = 100;
+      let numImge      = 90;
       let tailleMax    = 15;
       
       let sprite       = this.tiles.get( name);
 
-      let particuleLen = 30 + Math.round( 150 * sprite.size);
+      let particuleLen = 30 + Math.round( 150 * sprite.zoom);
 
       let listPoint    = new Array( particuleLen);
       let func         = this._overlayStart( sprite, numImge, tailleMax );

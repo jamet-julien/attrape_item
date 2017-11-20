@@ -1,32 +1,26 @@
-import Render from './render.js';
+import Render   from './render.js';
+import Mouse    from './mouse.js';
+import Collider from './collider.js';
 
 export default class Level{
 
   constructor(){
     this.items  = [];
     this.render = Render;
+    this.mouse  = Mouse();
 
-    this.test      = 0;
-    this.testLimit = 10;
+    //this.render.push( this.mouse.draw);
+
+    this.collider = new Collider( this.mouse);
   }
 
 
   update( freq){
 
-    this.items.map( items => {
-      items.update( freq);
-      
-      if (this.test > this.testLimit){
-        items.trigger();
-      }
-      // vérification des cliques USER
+    this.items.map( item => {
+      item.update( freq);
+      this.collider.check( item);
     });
-    
-    if (this.test > this.testLimit) {
-      this.test = 0;
-    }else{
-      this.test += freq;
-    }
   }
 
 

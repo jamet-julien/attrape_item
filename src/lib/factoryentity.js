@@ -40,12 +40,12 @@ export function factoryEntity(sprite, objectConf){
 
       return function createItem(){
        
-        let item      = new Entity();
-        let iLen      = listAnimArray.length - 1;
-        let randIndex = Math.round( Math.random() * iLen);
+        let item        = new Entity();
+        let iLen        = listAnimArray.length - 1;
+        let randIndex   = Math.round( Math.random() * iLen);
 
         item.pos.x      = Math.random() * 640;
-        item.pos.y      = (Math.random() * -640)- 30;
+        item.pos.y      = (Math.random() * -640) - 30;
         item.animeEnd   = false;
         item.died       = false;
         item.anim       = listAnimArray[ randIndex];
@@ -58,10 +58,14 @@ export function factoryEntity(sprite, objectConf){
         item.draw        = draw;//explode
         item.drawExplode = drawExplode;
 
-        let explodeAnim  = objectConf.animations[ item.anim ].entity;
-        item.explodeAnim = sprite.explodes.get( explodeAnim).anim( dieAnimeEnd.bind( item));
+        let tileName  = objectConf.animations[ item.anim ].entity;
+        let tiles     = sprite.tiles.get(tileName);
 
-        item.size        = objectConf.entity[explodeAnim].size;
+        item.explodeAnim = sprite.explodes.get( tileName).anim( dieAnimeEnd.bind( item));
+
+        item.zoom   = objectConf.entity[tileName].zoom;
+        item.size.x = tiles.size.x;
+        item.size.y = tiles.size.y;
 
         return item;
 

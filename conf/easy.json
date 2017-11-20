@@ -50,69 +50,69 @@
 
     "biscuit_bleu_small": {
       "item": "pt_biscuit_bleu",
-      "size": 0.2,
+      "zoom": 0.2,
       "blur": 5
     },
 
     "biscuit_jaune_small": {
       "item": "pt_biscuit_jaune",
-      "size": 0.2,
+      "zoom": 0.2,
       "blur": 5
     },
     "chaussette_small": {
       "item": "chaussette",
-      "size": 0.2,
+      "zoom": 0.2,
       "blur": 5
     },
     "couronne_small": {
       "item": "couronne",
-      "size": 0.2,
+      "zoom": 0.2,
       "blur": 5
     },
 
 
     "biscuit_bleu": {
       "item": "pt_biscuit_bleu",
-      "size": 0.3,
+      "zoom": 0.3,
       "blur": 0
     },
     "biscuit_jaune": {
       "item": "pt_biscuit_jaune",
-      "size": 0.3,
+      "zoom": 0.3,
       "blur": 0
     },
     "chaussette": {
       "item": "chaussette",
-      "size": 0.3,
+      "zoom": 0.3,
       "blur": 0
     },
     "couronne": {
       "item": "couronne",
-      "size": 0.3,
+      "zoom": 0.3,
       "blur": 0
     },
 
 
     "biscuit_bleu_big": {
       "item": "pt_biscuit_bleu",
-      "size": 0.6,
+      "zoom": 0.6,
       "blur": 2
     },
     "biscuit_jaune_big": {
       "item": "pt_biscuit_jaune",
-      "size": 0.6,
+      "zoom": 0.6,
       "blur": 2
     },
 
     "chaussette_big": {
       "item": "chaussette",
-      "size": 0.6,
+      "zoom": 0.6,
       "blur": 2
     },
 
     "couronne_big": {
       "item": "couronne",
-      "size": 0.6,
+      "zoom": 0.6,
       "blur": 2
     }
   },

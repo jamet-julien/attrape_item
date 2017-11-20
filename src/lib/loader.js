@@ -38,8 +38,8 @@ export function loadSprite( conf, pathSrc) {
     //on stock les images de 
     for (let name in conf.entity) {
       let entity = conf.entity[name];
-      let { x, y, w, h, centre, size = 1, blur = 0 } = Object.assign({}, conf.items[entity.item], entity);
-      spritesheet.define( name, x, y, w, h, centre, size, blur);
+      let { x, y, w, h, centre, zoom = 1, blur = 0 } = Object.assign({}, conf.items[entity.item], entity);
+      spritesheet.define( name, x, y, w, h, centre, zoom, blur);
     }
     
     for (let name in conf.animations) {
