@@ -52,6 +52,7 @@ export default class SpriteSheet{
         bufferNew.height = _height;
 
         const context = bufferNew.getContext('2d');
+        context.globalAlpha = 0.6;
 
    
         for (let i = 0; i < _count; i++) {
@@ -81,7 +82,7 @@ export default class SpriteSheet{
       let len        = entity.length,
           sprites    = new Array( len),
           listPoint  = new Array( count),
-          topPart    = Math.round( (size.height / 3)*2),
+          topPart    = Math.round( ( size.height / 4 ) * 3),
           bottomPart = size.height - topPart;
 
       for( let i = 0; i < len ; i++){
@@ -105,7 +106,7 @@ export default class SpriteSheet{
       let animSet = [];
 
       for (let i = 0; i < numImage; i++) {
-        let frame = func(listPoint, i);
+        let frame = func( listPoint, i);
 
         if (frame) {
           animSet.push(frame);
@@ -176,7 +177,7 @@ export default class SpriteSheet{
 
       context.drawImage( this.image, x, y, w, h, 0, 0, Math.ceil(w * zoom), Math.ceil(h * zoom));
       
-      if( zoom != .3 && !~name.indexOf("etoile") ){
+      if( zoom != .3 && !~name.indexOf( "etoile") ){
 
         let color   = (zoom <= .2) ? 'rgba( 255, 255, 255, .4)' : 'rgba( 0, 0, 0, .3)';
         let option  = { buffer, w, h };
