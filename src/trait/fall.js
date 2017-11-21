@@ -4,7 +4,7 @@ import Vector    from '../lib/vector.js';
 export default class Fall extends Trait{
 
     constructor( start, yMax){
-      super('fall');
+      super('FALL');
       this.vit      = Math.ceil( Math.random() * 2);
       this.bottom   = yMax;
       this.start    = start;
@@ -13,7 +13,12 @@ export default class Fall extends Trait{
     trigger( ){
 
     }
-    
+
+    reset( entity){
+      entity.animeEnd = false;
+      entity.died = false;
+      entity.pos.y = this.start;
+    }
 
     update( entity , deltaTime){
 

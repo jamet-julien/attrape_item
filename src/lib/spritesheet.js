@@ -51,7 +51,7 @@ export default class SpriteSheet{
         bufferNew.width  = _width;
         bufferNew.height = _height;
 
-        const context = bufferNew.getContext('2d');
+        const context       = bufferNew.getContext('2d');
         context.globalAlpha = 0.6;
 
    

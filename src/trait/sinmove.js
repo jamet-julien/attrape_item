@@ -4,7 +4,7 @@ import Vector    from '../lib/vector.js';
 export default class SinMove extends Trait{
 
     constructor( xStart){
-      super('SinMove');
+      super('SINMOVE');
       
       this.start    = xStart;
       this.lifeTime = 0;

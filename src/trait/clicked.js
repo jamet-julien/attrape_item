@@ -4,7 +4,7 @@ import Vector    from '../lib/vector.js';
 export default class Clicked extends Trait{
 
     constructor( start){
-      super( 'Clicked');
+      super( 'CLICKED');
     }
 
     trigger( entity){

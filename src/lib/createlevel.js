@@ -51,14 +51,14 @@ export function createLevel( {width, height}){
       return loadJson( `./conf/${mode}.json`)
         .then( objectConf => Promise.all([
           objectConf,
-          loadSprite( objectConf, objectConf.spritesheet)
+          loadSprite( objectConf, objectConf.setting.spritesheet)
         ]))
         .then(([ objectConf, sprite]) => {
 
-          let level = new Level({ width, height });
-
+          let level  = new Level({ width, height });
+          level.time = objectConf.setting.time;
           //setupBackground( objectConf, level, sprite);
-          setupEntity(objectConf, level, sprite, { width, height });
+          setupEntity( objectConf, level, sprite, { width, height });
 
           return level;
 

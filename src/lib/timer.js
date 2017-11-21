@@ -5,6 +5,7 @@ export default class Timer {
       this.lastTick        = 0;
       this.cumulateTime    = 0;
       this.visibilityState = 'visible';
+      this.play            = false;
 
       document.addEventListener( 'visibilitychange',() => {
         this.visibilityState = document.visibilityState;
@@ -29,11 +30,14 @@ export default class Timer {
           this.draw(this.cumulateTime);
         }
 
-        this.enqueue();
+        this.play && this.enqueue();
 
       };
   }
 
+  stop(){
+    this.play = false;
+  }
 
   enqueue(){
     requestAnimationFrame( this.proxyRun);
@@ -41,6 +45,7 @@ export default class Timer {
 
 
   start(){
+    this.play = true;
     this.enqueue();
   }
 

@@ -36,9 +36,12 @@ export default class Collider{
           this.mouse.y >= item.hitBox.top){
             item.trigger();
             this.mouse.forceDown();
+            return true;
           }
 
     }
+
+    return false;
   }
 
 

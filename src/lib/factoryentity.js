@@ -6,9 +6,10 @@ import Clicked   from '../trait/clicked.js';
 
 export function factoryEntity( sprite, objectConf, { width, height }){
 
-  let    listAnimArray  = [...Object.keys( objectConf.animations)],
-          widthCanvas   = width,
-          heightCanvas  = height;
+  let listAnimArray    = [...Object.keys(objectConf.collectable)],
+          widthCanvas  = width,
+          heightCanvas = height,
+          animEtoile   = sprite.animations.get("explode");
 
       function draw( context, cumulateTime){
 
@@ -41,6 +42,15 @@ export function factoryEntity( sprite, objectConf, { width, height }){
       
       }
 
+
+      function reset(){
+
+        if (this.FALL){
+          this.FALL.reset( this);
+        }
+
+      }
+
       function dieAnimeEnd(){
         this.numExplode = 0;
         this.animeEnd   = true;
@@ -52,33 +62,37 @@ export function factoryEntity( sprite, objectConf, { width, height }){
         let iLen        = listAnimArray.length - 1;
         let randIndex   = Math.round( Math.random() * iLen);
 
-        item.pos.x      =  Math.random() * widthCanvas;
-        item.pos.y      = (Math.random() * -heightCanvas) - 30;
         item.animeEnd   = false;
         item.died       = false;
-        item.anim       = listAnimArray[ randIndex];
-        item.numExplode = 0;
 
+        item.pos.x      =  Math.random() * widthCanvas;
+        item.pos.y = (Math.random() * -heightCanvas) - Math.round(heightCanvas/5);
         item.addTrait( new Fall(item.pos.y, height+40));
         item.addTrait( new SinMove( item.pos.x));
         item.addTrait( new Clicked());
         
-        item.draw        = draw;//explode
+        item.anim       = listAnimArray[ randIndex];
+        let confItem    = objectConf.collectable[item.anim];
+
+        item.numExplode  = 0;
+
+        item.draw        = draw;         //explode
         item.drawExplode = drawExplode;
-
-        let tileName  = objectConf.animations[ item.anim ].entity;
-        let tiles     = sprite.tiles.get( tileName);
-
-        let animEtoile = sprite.animations.get("explode");
-
-        item.explodeAnim   = sprite.explodes.get( tileName).anim( dieAnimeEnd.bind( item));
-        item.explodeEtoile = animEtoile.anim( dieAnimeEnd.bind( item));
+        item.reset       = reset.bind(item);
+        item.score       = confItem.score;
 
         
-        item.zoom   = objectConf.entity[tileName].zoom;
+        let tileName = confItem.entity;
+        let tiles    = sprite.tiles.get( tileName);
+        
         item.size.x = tiles.size.x;
         item.size.y = tiles.size.y;
         
+        item.explodeAnim   = sprite.explodes.get( tileName).anim( dieAnimeEnd.bind( item));
+        item.explodeEtoile = animEtoile.anim( dieAnimeEnd.bind( item));
+
+        item.zoom = objectConf.entity[tileName].zoom;
+
         item.etoileOffset  = {
           x : -Math.round((animEtoile.size.width  - item.size.x)*.5),
           y : -animEtoile.size.height,

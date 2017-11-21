@@ -47,8 +47,8 @@ export function loadSprite( conf, pathSrc) {
       spritesheet.defineDecoration( name, entity);
     }
     
-    for (let name in conf.animations) {
-      let entity = conf.animations[name];
+    for (let name in conf.collectable) {
+      let entity = conf.collectable[name];
       spritesheet.defineAnimation( name, entity);
     }
     

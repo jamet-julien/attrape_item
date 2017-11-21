@@ -1,6 +1,9 @@
 {
-  "spritesheet": "./img/item.png",
 
+  "setting" : {
+    "spritesheet": "./img/item.png",
+    "time"       : 10
+  },
 
   "items": {
 
@@ -146,37 +149,41 @@
       }
   },
 
-  "animations": {
+  "collectable": {
 
     "anim_biscuit_bleu_small": {
+      "score"  : 100,
       "entity" : "biscuit_bleu_small",
       "deg"    : 25,
       "freq"   : 120
     },
 
     "anim_biscuit_jaune": {
-      "entity": "biscuit_jaune",
-      "deg" : 25,
-      "freq": 120
+      "score"  : 100,
+      "entity" : "biscuit_jaune",
+      "deg"    : 25,
+      "freq"   : 120
     },
 
     "anim_chaussette_big": {
+      "score"  : 50,
       "entity" : "chaussette_big",
       "deg"    : 10,
       "freq"   : 120
     },
 
     "anim_couronne": {
-      "entity": "couronne",
-      "deg": 10,
-      "freq": 120
+      "score"  : 25,
+      "entity" : "couronne",
+      "deg"    : 10,
+      "freq"   : 120
     },
 
     "anim_couronne_big": {
-      "item"  : true,
-      "entity": "couronne_big",
-      "deg"   : 10,
-      "freq"  : 120
+      "score"  : 10,
+      "entity" : "couronne_big",
+      "deg"    : 10,
+      "freq"   : 120
     }
   }
 }

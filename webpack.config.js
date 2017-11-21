@@ -1,3 +1,5 @@
+var webpack = require('webpack');
+
 module.exports = {
 
    context : __dirname,
@@ -24,5 +26,11 @@ module.exports = {
           include : __dirname 
         }
       ]
-    }
+    },
+    
+     plugins: [
+        new webpack.optimize.UglifyJsPlugin({
+          comments : false
+        })
+      ]
 }
