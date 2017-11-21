@@ -1,0 +1,188 @@
+{
+
+  "setting" : {
+    "spritesheet": "./img/item.png",
+    "time"       : 30,
+    "num"        : 20
+  },
+
+  "frames": {
+
+    "etoile" : {
+        "x": 111,
+        "y": 335,
+        "w": 42,
+        "h": 43,
+        "centre": {
+          "x": 21,
+          "y": 21
+        }
+    },
+
+    "pt_biscuit_bleu": {
+      "x"      : 60,
+      "y"      : 50,
+      "w"      : 140,
+      "h"      : 245,
+      "centre" : {
+        "x" : 70,
+        "y" : 26
+      }
+    },
+
+    "pt_biscuit_jaune": {
+      "x": 358,
+      "y": 50,
+      "w": 140,
+      "h": 245,
+      "centre" : {
+        "x": 70,
+        "y": 26
+      }
+    },
+
+    "chaussette": {
+      "x": 659,
+      "y": 90,
+      "w": 139,
+      "h": 208,
+      "centre" : {
+        "x" : 40,
+        "y" : 40
+      }
+    },
+
+    "couronne": {
+      "x": 956,
+      "y": 83,
+      "w": 214,
+      "h": 214,
+      "centre" : {
+        "x" : 105,
+        "y" : 62
+      }
+    }
+
+  },
+
+
+  "entity": {
+    
+    "etoile0": {
+      "item": "etoile",
+      "zoom": 0.1
+    },    
+    "etoile1": {
+      "item": "etoile",
+      "zoom": 0.2
+    },
+    "etoile2": {
+      "item": "etoile",
+      "zoom": 0.5
+    },
+
+    "biscuit_bleu_small": {
+      "item": "pt_biscuit_bleu",
+      "zoom": 0.2
+    },
+
+    "biscuit_jaune_small": {
+      "item": "pt_biscuit_jaune",
+      "zoom": 0.2
+    },
+    "chaussette_small": {
+      "item": "chaussette",
+      "zoom": 0.2
+    },
+    "couronne_small": {
+      "item": "couronne",
+      "zoom": 0.2
+    },
+
+    "biscuit_bleu": {
+      "item": "pt_biscuit_bleu",
+      "zoom": 0.3
+    },
+    "biscuit_jaune": {
+      "item": "pt_biscuit_jaune",
+      "zoom": 0.3
+    },
+    "chaussette": {
+      "item": "chaussette",
+      "zoom": 0.3
+    },
+    "couronne": {
+      "item": "couronne",
+      "zoom": 0.3
+    },
+
+    "biscuit_bleu_big": {
+      "item": "pt_biscuit_bleu",
+      "zoom": 0.6
+    },
+    "biscuit_jaune_big": {
+      "item": "pt_biscuit_jaune",
+      "zoom": 0.6
+    },
+
+    "chaussette_big": {
+      "item": "chaussette",
+      "zoom": 0.6
+    },
+
+    "couronne_big": {
+      "item": "couronne",
+      "zoom": 0.6
+    }
+  },
+
+  "decoration" : {
+      "explode" : {
+          "entity"   : ["etoile0", "etoile1", "etoile2"],
+          "numImage" : 100,
+          "count"    : 30,
+          "size"     : {
+            "width"  : 100,
+            "height" : 300
+          }
+      }
+  },
+
+  "collectable": {
+
+    "anim_biscuit_bleu_small": {
+      "score"  : 100,
+      "entity" : "biscuit_bleu_small",
+      "deg"    : 25,
+      "freq"   : 120
+    },
+
+    "anim_biscuit_jaune": {
+      "score"  : 100,
+      "entity" : "biscuit_jaune",
+      "deg"    : 25,
+      "freq"   : 120
+    },
+
+    "anim_chaussette_big": {
+      "score"  : 50,
+      "entity" : "chaussette_big",
+      "deg"    : 10,
+      "freq"   : 120
+    },
+
+    "anim_couronne": {
+      "score"  : 25,
+      "entity" : "couronne",
+      "deg"    : 10,
+      "freq"   : 120
+    },
+
+    "anim_couronne_big": {
+      "score"  : 10,
+      "entity" : "couronne_big",
+      "deg"    : 10,
+      "freq"   : 120
+    }
+  }
+}

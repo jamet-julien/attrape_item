@@ -9,7 +9,8 @@ export function factoryEntity( sprite, objectConf, { width, height }){
   let listAnimArray    = [...Object.keys(objectConf.collectable)],
           widthCanvas  = width,
           heightCanvas = height,
-          animEtoile   = sprite.animations.get("explode");
+          animEtoile   = sprite.animations.get("explode"),
+          margeWidth   = Math.round( widthCanvas / 6);
 
       function draw( context, cumulateTime){
 
@@ -65,8 +66,8 @@ export function factoryEntity( sprite, objectConf, { width, height }){
         item.animeEnd   = false;
         item.died       = false;
 
-        item.pos.x      =  Math.random() * widthCanvas;
-        item.pos.y = (Math.random() * -heightCanvas) - Math.round(heightCanvas/5);
+        item.pos.x    = Math.random() * (widthCanvas - margeWidth * 2) + margeWidth;
+        item.pos.y    = (Math.random() * -heightCanvas) - Math.round(heightCanvas/5);
         item.addTrait( new Fall(item.pos.y, height+40));
         item.addTrait( new SinMove( item.pos.x));
         item.addTrait( new Clicked());

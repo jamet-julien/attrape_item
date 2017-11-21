@@ -10,8 +10,8 @@ let level, timer, end, totalTime, playing = true;
 function play() {
   if (!playing) {
     timer.start();
-    playing = true;
-    end = false;
+    playing   = true;
+    end       = false;
     totalTime = 0;
   }
 }
@@ -59,6 +59,14 @@ async function init(callBack){
   
   playing = false;
   level.event.emit('ready');
+
 }
 
 window.Game = init;
+/*
+init( (o)=>{
+  o.on('ready',()=>{
+    o.play();
+  })
+});
+*/

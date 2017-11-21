@@ -177,6 +177,7 @@ export default class SpriteSheet{
 
       context.drawImage( this.image, x, y, w, h, 0, 0, Math.ceil(w * zoom), Math.ceil(h * zoom));
       
+      /*
       if( zoom != .3 && !~name.indexOf( "etoile") ){
 
         let color   = (zoom <= .2) ? 'rgba( 255, 255, 255, .4)' : 'rgba( 0, 0, 0, .3)';
@@ -186,7 +187,8 @@ export default class SpriteSheet{
         context.drawImage( overlay, 0, 0);
         
       }
-      
+      */
+
       size.x = buffer.width;
       size.y = buffer.height;
 

@@ -26,7 +26,7 @@ function setupEntity(objectConf, level, sprite, { width, height }){
   let createEntity = factoryEntity(sprite, objectConf, { width, height }),
         entity, entities = [];
 
-    for( let i = 0 ; i < 20; i++){
+    for (let i = 0; i < objectConf.setting.num; i++){
       entities.push(createEntity({ width, height }));
     }
     

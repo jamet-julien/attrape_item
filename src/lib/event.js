@@ -3,7 +3,7 @@ const Event = () => {
   const eventList = new Map();
   
   function emit( eventName, ...arg){
-    console.log(eventName);
+
     if ( eventList.has( eventName)) {
       eventList.get(eventName).map(({ callback, scope})=>{
         let _scope = scope || window;

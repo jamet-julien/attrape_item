@@ -1,188 +1,845 @@
 {
-
-  "setting" : {
-    "spritesheet": "./img/item.png",
-    "time"       : 10
+  "setting": {
+    "spritesheet" : ".\/img\/real_item.png",
+    "time"        : 30,
+    "num"         : 20
   },
-
-  "items": {
-
-    "etoile" : {
-        "x": 111,
-        "y": 335,
-        "w": 42,
-        "h": 43,
-        "centre": {
-          "x": 21,
-          "y": 21
-        }
-    },
-
-    "pt_biscuit_bleu": {
-      "x"      : 60,
-      "y"      : 50,
-      "w"      : 140,
-      "h"      : 245,
+  "frames": {
+    "arbre_1": {
+      "type"   : "background",
+      "w"      : 348,
+      "h"      : 300,
+      "x"      : 1627,
+      "y"      : 2329,
       "centre" : {
-        "x" : 70,
-        "y" : 26
+        "x" : 174,
+        "y" : 0
       }
     },
-
-    "pt_biscuit_jaune": {
-      "x": 358,
-      "y": 50,
-      "w": 140,
-      "h": 245,
+    "arbre_2": {
+      "type"   : "background",
+      "w"      : 352,
+      "h"      : 314,
+      "x"      : 2815,
+      "y"      : 2654,
       "centre" : {
-        "x": 70,
-        "y": 26
+        "x" : 176,
+        "y" : 0
       }
     },
-
+    "arbre": {
+      "type"   : "background",
+      "w"      : 342,
+      "h"      : 293,
+      "x"      : 1995,
+      "y"      : 2329,
+      "centre" : {
+        "x" : 171,
+        "y" : 0
+      }
+    },
+    "bonbon": {
+      "type"   : "collectable",
+      "w"      : 345,
+      "h"      : 342,
+      "x"      : 680,
+      "y"      : 3389,
+      "centre" : {
+        "x" : 173,
+        "y" : 0
+      }
+    },
+    "boulle": {
+      "type"   : "collectable",
+      "w"      : 228,
+      "h"      : 283,
+      "x"      : 4063,
+      "y"      : 2501,
+      "centre" : {
+        "x" : 114,
+        "y" : 0
+      }
+    },
+    "cabane_1": {
+      "type"   : "background",
+      "w"      : 965,
+      "h"      : 759,
+      "x"      : 10,
+      "y"      : 1550,
+      "centre" : {
+        "x" : 483,
+        "y" : 0
+      }
+    },
+    "cabane": {
+      "type"   : "background",
+      "w"      : 1058,
+      "h"      : 759,
+      "x"      : 2096,
+      "y"      : 10,
+      "centre" : {
+        "x" : 529,
+        "y" : 0
+      }
+    },
+    "cadeau_1": {
+      "type"   : "collectable",
+      "w"      : 324,
+      "h"      : 306,
+      "x"      : 3187,
+      "y"      : 2654,
+      "centre" : {
+        "x" : 162,
+        "y" : 0
+      }
+    },
+    "cadeau": {
+      "type"   : "background",
+      "w"      : 320,
+      "h"      : 285,
+      "x"      : 2357,
+      "y"      : 2329,
+      "centre" : {
+        "x" : 160,
+        "y" : 0
+      }
+    },
+    "chapeau": {
+      "type"   : "collectable",
+      "w"      : 345,
+      "h"      : 329,
+      "x"      : 2450,
+      "y"      : 2654,
+      "centre" : {
+        "x" : 173,
+        "y" : 0
+      }
+    },
     "chaussette": {
-      "x": 659,
-      "y": 90,
-      "w": 139,
-      "h": 208,
+      "type"   : "collectable",
+      "w"      : 270,
+      "h"      : 405,
+      "x"      : 4063,
+      "y"      : 2076,
       "centre" : {
-        "x" : 40,
-        "y" : 40
+        "x" : 135,
+        "y" : 0
       }
     },
-
-    "couronne": {
-      "x": 956,
-      "y": 83,
-      "w": 214,
-      "h": 214,
+    "etoiles": {
+      "type"   : "background",
+      "w"      : 306,
+      "h"      : 644,
+      "x"      : 3737,
+      "y"      : 10,
       "centre" : {
-        "x" : 105,
-        "y" : 62
+        "x" : 153,
+        "y" : 0
+      }
+    },
+    "immeuble_jour_1": {
+      "type"   : "background",
+      "w"      : 238,
+      "h"      : 938,
+      "x"      : 3174,
+      "y"      : 1662,
+      "centre" : {
+        "x" : 119,
+        "y" : 0
+      }
+    },
+    "immeuble_jour_2": {
+      "type"   : "background",
+      "w"      : 432,
+      "h"      : 333,
+      "x"      : 1998,
+      "y"      : 2654,
+      "centre" : {
+        "x" : 216,
+        "y" : 0
+      }
+    },
+    "immeuble_jour_3": {
+      "type"   : "background",
+      "w"      : 203,
+      "h"      : 705,
+      "x"      : 3479,
+      "y"      : 968,
+      "centre" : {
+        "x" : 102,
+        "y" : 0
+      }
+    },
+    "immeuble_jour_4": {
+      "type"   : "background",
+      "w"      : 391,
+      "h"      : 660,
+      "x"      : 1190,
+      "y"      : 724,
+      "centre" : {
+        "x" : 196,
+        "y" : 0
+      }
+    },
+    "immeuble_jour_5": {
+      "type"   : "background",
+      "w"      : 203,
+      "h"      : 755,
+      "x"      : 3737,
+      "y"      : 1449,
+      "centre" : {
+        "x" : 102,
+        "y" : 0
+      }
+    },
+    "immeuble_jour_6": {
+      "type"   : "background",
+      "w"      : 285,
+      "h"      : 806,
+      "x"      : 3174,
+      "y"      : 836,
+      "centre" : {
+        "x" : 143,
+        "y" : 0
+      }
+    },
+    "immeuble_jour_7": {
+      "type"   : "background",
+      "w"      : 315,
+      "h"      : 450,
+      "x"      : 345,
+      "y"      : 3389,
+      "centre" : {
+        "x" : 158,
+        "y" : 0
+      }
+    },
+    "immeuble_jour": {
+      "type"   : "background",
+      "w"      : 300,
+      "h"      : 715,
+      "x"      : 330,
+      "y"      : 2654,
+      "centre" : {
+        "x" : 150,
+        "y" : 0
+      }
+    },
+    "immeuble_1": {
+      "type"   : "background",
+      "w"      : 203,
+      "h"      : 705,
+      "x"      : 3737,
+      "y"      : 2224,
+      "centre" : {
+        "x" : 102,
+        "y" : 0
+      }
+    },
+    "immeuble_2": {
+      "type"   : "background",
+      "w"      : 300,
+      "h"      : 715,
+      "x"      : 10,
+      "y"      : 2654,
+      "centre" : {
+        "x" : 150,
+        "y" : 0
+      }
+    },
+    "immeuble_3": {
+      "type"   : "background",
+      "w"      : 428,
+      "h"      : 489,
+      "x"      : 650,
+      "y"      : 2654,
+      "centre" : {
+        "x" : 214,
+        "y" : 0
+      }
+    },
+    "immeuble_4": {
+      "type"   : "background",
+      "w"      : 315,
+      "h"      : 450,
+      "x"      : 10,
+      "y"      : 3389,
+      "centre" : {
+        "x" : 158,
+        "y" : 0
+      }
+    },
+    "immeuble_5": {
+      "type"   : "background",
+      "w"      : 255,
+      "h"      : 510,
+      "x"      : 4063,
+      "y"      : 1045,
+      "centre" : {
+        "x" : 128,
+        "y" : 0
+      }
+    },
+    "immeuble_6": {
+      "type"   : "background",
+      "w"      : 428,
+      "h"      : 489,
+      "x"      : 1098,
+      "y"      : 2654,
+      "centre" : {
+        "x" : 214,
+        "y" : 0
+      }
+    },
+    "immeuble_7": {
+      "type"   : "background",
+      "w"      : 391,
+      "h"      : 660,
+      "x"      : 1601,
+      "y"      : 724,
+      "centre" : {
+        "x" : 196,
+        "y" : 0
+      }
+    },
+    "immeuble_8": {
+      "type"   : "background",
+      "w"      : 238,
+      "h"      : 938,
+      "x"      : 3479,
+      "y"      : 10,
+      "centre" : {
+        "x" : 119,
+        "y" : 0
+      }
+    },
+    "immeuble_9": {
+      "type"   : "background",
+      "w"      : 203,
+      "h"      : 755,
+      "x"      : 3737,
+      "y"      : 674,
+      "centre" : {
+        "x" : 102,
+        "y" : 0
+      }
+    },
+    "immeuble_10": {
+      "type"   : "background",
+      "w"      : 285,
+      "h"      : 806,
+      "x"      : 3174,
+      "y"      : 10,
+      "centre" : {
+        "x" : 143,
+        "y" : 0
+      }
+    },
+    "immeuble_11": {
+      "type"   : "background",
+      "w"      : 1160,
+      "h"      : 806,
+      "x"      : 10,
+      "y"      : 724,
+      "centre" : {
+        "x" : 580,
+        "y" : 0
+      }
+    },
+    "immeuble": {
+      "type"   : "background",
+      "w"      : 255,
+      "h"      : 510,
+      "x"      : 4063,
+      "y"      : 515,
+      "centre" : {
+        "x" : 128,
+        "y" : 0
+      }
+    },
+    "lune": {
+      "type"   : "background",
+      "w"      : 458,
+      "h"      : 458,
+      "x"      : 2635,
+      "y"      : 789,
+      "centre" : {
+        "x" : 229,
+        "y" : 0
+      }
+    },
+    "maison_1": {
+      "type"   : "background",
+      "w"      : 432,
+      "h"      : 333,
+      "x"      : 1546,
+      "y"      : 2654,
+      "centre" : {
+        "x" : 216,
+        "y" : 0
+      }
+    },
+    "maison_2": {
+      "type"   : "background",
+      "w"      : 231,
+      "h"      : 239,
+      "x"      : 4063,
+      "y"      : 3063,
+      "centre" : {
+        "x" : 116,
+        "y" : 0
+      }
+    },
+    "maison_3": {
+      "type"   : "background",
+      "w"      : 231,
+      "h"      : 239,
+      "x"      : 4063,
+      "y"      : 2804,
+      "centre" : {
+        "x" : 116,
+        "y" : 0
+      }
+    },
+    "maison_4": {
+      "type"   : "background",
+      "w"      : 197,
+      "h"      : 203,
+      "x"      : 4063,
+      "y"      : 3545,
+      "centre" : {
+        "x" : 99,
+        "y" : 0
+      }
+    },
+    "maison": {
+      "type"   : "background",
+      "w"      : 197,
+      "h"      : 203,
+      "x"      : 4063,
+      "y"      : 3322,
+      "centre" : {
+        "x" : 99,
+        "y" : 0
+      }
+    },
+    "montagne_1": {
+      "type"   : "background",
+      "w"      : 1862,
+      "h"      : 325,
+      "x"      : 995,
+      "y"      : 1895,
+      "centre" : {
+        "x" : 931,
+        "y" : 0
+      }
+    },
+    "montagne_2": {
+      "type"   : "background",
+      "w"      : 1597,
+      "h"      : 305,
+      "x"      : 10,
+      "y"      : 2329,
+      "centre" : {
+        "x" : 799,
+        "y" : 0
+      }
+    },
+    "montagne": {
+      "type"   : "background",
+      "w"      : 1862,
+      "h"      : 325,
+      "x"      : 995,
+      "y"      : 1550,
+      "centre" : {
+        "x" : 931,
+        "y" : 0
+      }
+    },
+    "pain_epice": {
+      "type"   : "collectable",
+      "w"      : 278,
+      "h"      : 485,
+      "x"      : 4063,
+      "y"      : 10,
+      "centre" : {
+        "x" : 139,
+        "y" : 0
+      }
+    },
+    "sucre_orge_biscuit": {
+      "type"   : "background",
+      "w"      : 519,
+      "h"      : 555,
+      "x"      : 2096,
+      "y"      : 789,
+      "centre" : {
+        "x" : 260,
+        "y" : 0
+      }
+    },
+    "sucre_orge": {
+      "type"   : "collectable",
+      "w"      : 229,
+      "h"      : 481,
+      "x"      : 4063,
+      "y"      : 1575,
+      "centre" : {
+        "x" : 115,
+        "y" : 0
+      }
+    },
+    "montagne_d_orge": {
+      "type"   : "background",
+      "w"      : 2066,
+      "h"      : 694,
+      "x"      : 10,
+      "y"      : 10,
+      "centre" : {
+        "x" : 1033,
+        "y" : 0
+      }
+    },
+    "etoile": {
+      "type"   : "decoration",
+      "w"      : 34,
+      "h"      : 35,
+      "x"      : 198,
+      "y"      : 807,
+      "centre" : {
+        "x" : 17,
+        "y" : 0
       }
     }
-
   },
-
-
   "entity": {
-    
-    "etoile0": {
-      "item": "etoile",
-      "zoom": 0.1
-    },    
-    "etoile1": {
-      "item": "etoile",
-      "zoom": 0.2
+    "bonbon_small": {
+      "type" : "collectable",
+      "size" : "small",
+      "item" : "bonbon",
+      "zoom" : 0.1
     },
-    "etoile2": {
-      "item": "etoile",
-      "zoom": 0.5
+    "bonbon_medium": {
+      "type" : "collectable",
+      "size" : "medium",
+      "item" : "bonbon",
+      "zoom" : 0.2
     },
-
-    "biscuit_bleu_small": {
-      "item": "pt_biscuit_bleu",
-      "zoom": 0.2
+    "bonbon_big": {
+      "type" : "collectable",
+      "size" : "big",
+      "item" : "bonbon",
+      "zoom" : 0.3
     },
-
-    "biscuit_jaune_small": {
-      "item": "pt_biscuit_jaune",
-      "zoom": 0.2
+    "boulle_small": {
+      "type" : "collectable",
+      "size" : "small",
+      "item" : "boulle",
+      "zoom" : 0.1
+    },
+    "boulle_medium": {
+      "type" : "collectable",
+      "size" : "medium",
+      "item" : "boulle",
+      "zoom" : 0.2
+    },
+    "boulle_big": {
+      "type" : "collectable",
+      "size" : "big",
+      "item" : "boulle",
+      "zoom" : 0.3
+    },
+    "cadeau_1_small": {
+      "type" : "collectable",
+      "size" : "small",
+      "item" : "cadeau_1",
+      "zoom" : 0.1
+    },
+    "cadeau_1_medium": {
+      "type" : "collectable",
+      "size" : "medium",
+      "item" : "cadeau_1",
+      "zoom" : 0.2
+    },
+    "cadeau_1_big": {
+      "type" : "collectable",
+      "size" : "big",
+      "item" : "cadeau_1",
+      "zoom" : 0.3
+    },
+    "chapeau_small": {
+      "type" : "collectable",
+      "size" : "small",
+      "item" : "chapeau",
+      "zoom" : 0.1
+    },
+    "chapeau_medium": {
+      "type" : "collectable",
+      "size" : "medium",
+      "item" : "chapeau",
+      "zoom" : 0.2
+    },
+    "chapeau_big": {
+      "type" : "collectable",
+      "size" : "big",
+      "item" : "chapeau",
+      "zoom" : 0.3
     },
     "chaussette_small": {
-      "item": "chaussette",
-      "zoom": 0.2
+      "type" : "collectable",
+      "size" : "small",
+      "item" : "chaussette",
+      "zoom" : 0.1
     },
-    "couronne_small": {
-      "item": "couronne",
-      "zoom": 0.2
+    "chaussette_medium": {
+      "type" : "collectable",
+      "size" : "medium",
+      "item" : "chaussette",
+      "zoom" : 0.2
     },
-
-
-    "biscuit_bleu": {
-      "item": "pt_biscuit_bleu",
-      "zoom": 0.3
-    },
-    "biscuit_jaune": {
-      "item": "pt_biscuit_jaune",
-      "zoom": 0.3
-    },
-    "chaussette": {
-      "item": "chaussette",
-      "zoom": 0.3
-    },
-    "couronne": {
-      "item": "couronne",
-      "zoom": 0.3
-    },
-
-
-    "biscuit_bleu_big": {
-      "item": "pt_biscuit_bleu",
-      "zoom": 0.6
-    },
-    "biscuit_jaune_big": {
-      "item": "pt_biscuit_jaune",
-      "zoom": 0.6
-    },
-
     "chaussette_big": {
-      "item": "chaussette",
-      "zoom": 0.6
+      "type" : "collectable",
+      "size" : "big",
+      "item" : "chaussette",
+      "zoom" : 0.3
     },
-
-    "couronne_big": {
-      "item": "couronne",
-      "zoom": 0.6
+    "pain_epice_small": {
+      "type" : "collectable",
+      "size" : "small",
+      "item" : "pain_epice",
+      "zoom" : 0.1
+    },
+    "pain_epice_medium": {
+      "type" : "collectable",
+      "size" : "medium",
+      "item" : "pain_epice",
+      "zoom" : 0.2
+    },
+    "pain_epice_big": {
+      "type" : "collectable",
+      "size" : "big",
+      "item" : "pain_epice",
+      "zoom" : 0.3
+    },
+    "sucre_orge_small": {
+      "type" : "collectable",
+      "size" : "small",
+      "item" : "sucre_orge",
+      "zoom" : 0.1
+    },
+    "sucre_orge_medium": {
+      "type" : "collectable",
+      "size" : "medium",
+      "item" : "sucre_orge",
+      "zoom" : 0.2
+    },
+    "sucre_orge_big": {
+      "type" : "collectable",
+      "size" : "big",
+      "item" : "sucre_orge",
+      "zoom" : 0.3
+    },
+    "etoile_small": {
+      "type" : "decoration",
+      "size" : "small",
+      "item" : "etoile",
+      "zoom" : 0.2
+    },
+    "etoile_medium": {
+      "type" : "decoration",
+      "size" : "medium",
+      "item" : "etoile",
+      "zoom" : 0.3
+    },
+    "etoile_big": {
+      "type" : "decoration",
+      "size" : "big",
+      "item" : "etoile",
+      "zoom" : 0.5
     }
   },
+  "background": [
+    "arbre_1",
+    "arbre_2",
+    "arbre",
+    "cabane_1",
+    "cabane",
+    "cadeau",
+    "etoiles",
+    "immeuble_jour_1",
+    "immeuble_jour_2",
+    "immeuble_jour_3",
+    "immeuble_jour_4",
+    "immeuble_jour_5",
+    "immeuble_jour_6",
+    "immeuble_jour_7",
+    "immeuble_jour",
+    "immeuble_1",
+    "immeuble_2",
+    "immeuble_3",
+    "immeuble_4",
+    "immeuble_5",
+    "immeuble_6",
+    "immeuble_7",
+    "immeuble_8",
+    "immeuble_9",
+    "immeuble_10",
+    "immeuble_11",
+    "immeuble",
+    "lune",
+    "maison_1",
+    "maison_2",
+    "maison_3",
+    "maison_4",
+    "maison",
+    "montagne_1",
+    "montagne_2",
+    "montagne",
+    "sucre_orge_biscuit",
+    "montagne_d_orge"
+  ],
 
-  "decoration" : {
-      "explode" : {
-          "entity"   : ["etoile0", "etoile1", "etoile2"],
-          "numImage" : 100,
-          "count"    : 30,
-          "size"     : {
-            "width"  : 100,
-            "height" : 300
-          }
+  "decoration": {
+    "explode": {
+      "entity": [
+        "etoile_small",
+        "etoile_medium",
+        "etoile_big"
+      ],
+      "numImage" : 100,
+      "count"    : 30,
+      "size"     : {
+        "width"  : 100,
+        "height" : 300
       }
+    }
   },
 
   "collectable": {
-
-    "anim_biscuit_bleu_small": {
+    "collect_bonbon_small": {
       "score"  : 100,
-      "entity" : "biscuit_bleu_small",
-      "deg"    : 25,
-      "freq"   : 120
+      "entity" : "bonbon_small",
+      "deg"    : 30,
+      "freq"   : 90
     },
-
-    "anim_biscuit_jaune": {
-      "score"  : 100,
-      "entity" : "biscuit_jaune",
-      "deg"    : 25,
-      "freq"   : 120
-    },
-
-    "anim_chaussette_big": {
+    "collect_bonbon_medium": {
       "score"  : 50,
-      "entity" : "chaussette_big",
-      "deg"    : 10,
-      "freq"   : 120
+      "entity" : "bonbon_medium",
+      "deg"    : 25,
+      "freq"   : 100
     },
-
-    "anim_couronne": {
-      "score"  : 25,
-      "entity" : "couronne",
-      "deg"    : 10,
-      "freq"   : 120
-    },
-
-    "anim_couronne_big": {
+    "collect_bonbon_big": {
       "score"  : 10,
-      "entity" : "couronne_big",
-      "deg"    : 10,
+      "entity" : "bonbon_big",
+      "deg"    : 20,
+      "freq"   : 120
+    },
+    "collect_boulle_small": {
+      "score"  : 100,
+      "entity" : "boulle_small",
+      "deg"    : 30,
+      "freq"   : 90
+    },
+    "collect_boulle_medium": {
+      "score"  : 50,
+      "entity" : "boulle_medium",
+      "deg"    : 25,
+      "freq"   : 100
+    },
+    "collect_boulle_big": {
+      "score"  : 10,
+      "entity" : "boulle_big",
+      "deg"    : 20,
+      "freq"   : 120
+    },
+    "collect_cadeau_1_small": {
+      "score"  : 100,
+      "entity" : "cadeau_1_small",
+      "deg"    : 30,
+      "freq"   : 90
+    },
+    "collect_cadeau_1_medium": {
+      "score"  : 50,
+      "entity" : "cadeau_1_medium",
+      "deg"    : 25,
+      "freq"   : 100
+    },
+    "collect_cadeau_1_big": {
+      "score"  : 10,
+      "entity" : "cadeau_1_big",
+      "deg"    : 20,
+      "freq"   : 120
+    },
+    "collect_chapeau_small": {
+      "score"  : 100,
+      "entity" : "chapeau_small",
+      "deg"    : 30,
+      "freq"   : 90
+    },
+    "collect_chapeau_medium": {
+      "score"  : 50,
+      "entity" : "chapeau_medium",
+      "deg"    : 25,
+      "freq"   : 100
+    },
+    "collect_chapeau_big": {
+      "score"  : 10,
+      "entity" : "chapeau_big",
+      "deg"    : 20,
+      "freq"   : 120
+    },
+    "collect_chaussette_small": {
+      "score"  : 100,
+      "entity" : "chaussette_small",
+      "deg"    : 30,
+      "freq"   : 90
+    },
+    "collect_chaussette_medium": {
+      "score"  : 50,
+      "entity" : "chaussette_medium",
+      "deg"    : 25,
+      "freq"   : 100
+    },
+    "collect_chaussette_big": {
+      "score"  : 10,
+      "entity" : "chaussette_big",
+      "deg"    : 20,
+      "freq"   : 120
+    },
+    "collect_pain_epice_small": {
+      "score"  : 100,
+      "entity" : "pain_epice_small",
+      "deg"    : 30,
+      "freq"   : 90
+    },
+    "collect_pain_epice_medium": {
+      "score"  : 50,
+      "entity" : "pain_epice_medium",
+      "deg"    : 25,
+      "freq"   : 100
+    },
+    "collect_pain_epice_big": {
+      "score"  : 10,
+      "entity" : "pain_epice_big",
+      "deg"    : 20,
+      "freq"   : 120
+    },
+    "collect_sucre_orge_small": {
+      "score"  : 100,
+      "entity" : "sucre_orge_small",
+      "deg"    : 30,
+      "freq"   : 90
+    },
+    "collect_sucre_orge_medium": {
+      "score"  : 50,
+      "entity" : "sucre_orge_medium",
+      "deg"    : 25,
+      "freq"   : 100
+    },
+    "collect_sucre_orge_big": {
+      "score"  : 10,
+      "entity" : "sucre_orge_big",
+      "deg"    : 20,
       "freq"   : 120
     }
   }
